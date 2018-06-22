@@ -60,8 +60,7 @@ class GCDUnitTester(c: GCD) extends PeekPokeTester(c) {
   * }}}
   */
 class GCDTester extends ChiselFlatSpec {
-  // Disable this until we fix isCommandAvailable to swallow stderr along with stdout
-  private val backendNames = if(false && firrtl.FileUtils.isCommandAvailable(Seq("verilator", "--version"))) {
+  private val backendNames = if(firrtl.FileUtils.isCommandAvailable(Seq("verilator", "--version"))) {
     Array("firrtl", "verilator")
   }
   else {
